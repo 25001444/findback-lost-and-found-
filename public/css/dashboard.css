@@ -1,0 +1,537 @@
+/* ============================
+   Dashboard page
+   ============================ */
+
+.dashboard-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f6f2 0%, #eee8df 100%);
+    padding: 40px 7%;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.dashboard-welcome {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-welcome h1 {
+    color: #4f4a43;
+    margin-bottom: 8px;
+}
+
+.dashboard-welcome span {
+    color: #8f846f;
+}
+
+.dashboard-welcome p {
+    color: #777;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border: 1px solid #e3ddd4;
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(143, 132, 111, 0.1);
+}
+
+.dashboard-card h2 {
+    color: #8f846f;
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.dashboard-card p {
+    color: #555;
+    margin: 0;
+}
+
+.dashboard-section {
+    background: #ffffff;
+    border: 1px solid #e3ddd4;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(143, 132, 111, 0.08);
+}
+
+.dashboard-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-section-header h2 {
+    color: #4f4a43;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e8e1d8;
+    text-align: left;
+}
+
+.dashboard-table th {
+    color: #5f584d;
+    background: #f5f1eb;
+}
+
+.dashboard-table td {
+    color: #555;
+}
+
+.dashboard-actions a {
+    color: #8f846f;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 12px;
+}
+
+.dashboard-actions a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.dashboard-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #b8aa91;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.dashboard-button:hover {
+    background: #8f846f;
+}
+
+.dashboard-button.secondary {
+    background: #ffffff;
+    color: #8f846f;
+    border: 1px solid #b8aa91;
+}
+
+.dashboard-button.secondary:hover {
+    background: #eee8df;
+}
+
+.empty-message {
+    text-align: center;
+    color: #888;
+    padding: 25px;
+}
+
+@media (max-width: 800px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-section {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-buttons {
+        flex-direction: column;
+    }
+}
+
+/* ============================
+   Action links and buttons
+   ============================ */
+
+.dashboard-table td:last-child {
+    white-space: nowrap;
+}
+
+.action-link {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 6px;
+    color: #8f846f;
+    border: 1.5px solid #b8aa91;
+    background: #ffffff;
+    transition: background 0.2s ease;
+}
+
+.action-link:hover {
+    background: #eee8df;
+}
+
+.view-action {
+    background: #ffffff;
+    color: #b8aa91;
+    border: 1.5px solid #b8aa91;
+}
+
+.view-action:hover {
+    background: #f3eee6;
+}
+
+.edit-action {
+    background: #ffffff;
+    color: #8fa184;
+    border: 1.5px solid #8fa184;
+}
+
+.edit-action:hover {
+    background: #edf3ea;
+}
+
+.inline-form {
+    display: inline;
+}
+
+/* Delete remains red because it is a destructive action */
+
+.link-button {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1.5px solid #c95f5f;
+    background: #ffffff;
+    color: #b34f4f;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s ease;
+}
+
+.link-button:hover {
+    background: #f8e5e3;
+}
+
+/* ============================
+   Admin status tabs
+   ============================ */
+
+.status-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.status-tab {
+    padding: 9px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #8f846f;
+    border: 1.5px solid #b8aa91;
+    background: #ffffff;
+}
+
+.status-tab:hover {
+    background: #eee8df;
+}
+
+.status-tab.active-tab {
+    background: #b8aa91;
+    color: #ffffff;
+}
+
+/* ============================
+   Admin claim details
+   ============================ */
+
+.claim-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.claim-panel {
+    background: #ffffff;
+    border: 1px solid #e3ddd4;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(143, 132, 111, 0.1);
+}
+
+.claim-panel-wide {
+    grid-column: 1 / -1;
+}
+
+.claim-panel h2 {
+    color: #8f846f;
+    font-size: 1.05rem;
+    margin: 14px 0 8px;
+}
+
+.claim-panel h2:first-child {
+    margin-top: 0;
+}
+
+.claim-panel p {
+    color: #5f584d;
+    font-size: 0.93rem;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.claim-item-image {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* ============================
+   Admin decision forms
+   ============================ */
+
+.claim-decision {
+    background: #ffffff;
+    border: 1px solid #e3ddd4;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(143, 132, 111, 0.1);
+    margin-bottom: 24px;
+}
+
+.claim-decision h2 {
+    color: #8f846f;
+    margin-bottom: 14px;
+}
+
+.decision-form {
+    margin-bottom: 18px;
+}
+
+.decision-form textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d8d0c4;
+    border-radius: 10px;
+    background: #fffdf9;
+    color: #5f584d;
+    font-family: inherit;
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+    resize: vertical;
+    outline: none;
+}
+
+.decision-form textarea:focus {
+    border-color: #b8aa91;
+    box-shadow: 0 0 0 3px rgba(184, 170, 145, 0.15);
+}
+
+/* Approve and reject keep meaningful colours */
+
+.approve-button {
+    padding: 11px 26px;
+    border: none;
+    border-radius: 999px;
+    background: #4f7a57;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reject-button {
+    padding: 11px 26px;
+    border: none;
+    border-radius: 999px;
+    background: #c95f5f;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.approve-button:hover,
+.reject-button:hover {
+    opacity: 0.85;
+}
+
+.return-button {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1.5px solid #4f7a57;
+    background: #ffffff;
+    color: #4f7a57;
+    cursor: pointer;
+    font-family: inherit;
+    margin-right: 6px;
+}
+
+.return-button:hover {
+    background: #e3eee2;
+}
+
+/* ============================
+   Admin filter bar
+   ============================ */
+
+.admin-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #e3ddd4;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(143, 132, 111, 0.1);
+    margin-bottom: 24px;
+}
+
+.admin-filter-bar input,
+.admin-filter-bar select {
+    padding: 10px 14px;
+    border: 1.5px solid #d8d0c4;
+    border-radius: 10px;
+    background: #fffdf9;
+    color: #5f584d;
+    font-family: inherit;
+    font-size: 0.92rem;
+    outline: none;
+}
+
+.admin-filter-bar input:focus,
+.admin-filter-bar select:focus {
+    border-color: #b8aa91;
+}
+
+.admin-filter-bar input[name="search"] {
+    flex: 1;
+    min-width: 200px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #8f846f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Status colours remain meaningful */
+
+.type-lost {
+    color: #a65c50;
+    font-weight: 600;
+}
+
+.type-found {
+    color: #4f7a57;
+    font-weight: 600;
+}
+
+.success-message {
+    background-color: #e8f3e8;
+    border: 1px solid #4f7a57;
+    color: #3d6344;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 18px 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 720px) {
+    .claim-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .claim-panel-wide {
+        grid-column: auto;
+    }
+
+    .dashboard-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.claim-proof-image {
+    width: 100%;
+    max-width: 420px;
+    max-height: 420px;
+    margin-top: 12px;
+    object-fit: contain;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px;
+    background: var(--white);
+}
+
+.dashboard-card:nth-child(2) h2 { color: #e8a838; }  /* Pending - amber */
+.dashboard-card:nth-child(3) h2 { color: #2b8a3e; }  /* Approved - green */
+.dashboard-card:nth-child(4) h2 { color: #c92a2a; }  /* Rejected - red */
+
+.dashboard-card:nth-child(2) { background: #fff9e6; }
+.dashboard-card:nth-child(3) { background: #ebfbee; }
+.dashboard-card:nth-child(4) { background: #fff5f5; }
+
+.dashboard-table .type-lost,
+.dashboard-table .type-found,
+.dashboard-table .status-active,
+.dashboard-table .status-claimed,
+.dashboard-table .status-returned,
+.dashboard-table .status-pending,
+.dashboard-table .status-approved,
+.dashboard-table .status-rejected {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.type-lost     { background: #fff0f0; color: #c92a2a; }
+.type-found    { background: #ebfbee; color: #2b8a3e; }
+
+.status-active   { background: #ebfbee; color: #2b8a3e; }
+.status-claimed  { background: #fff4e6; color: #e8590c; }
+.status-returned { background: #f1f3f5; color: #495057; }
+
+.status-pending  { background: #fff9e6; color: #b8860b; }
+.status-approved { background: #ebfbee; color: #2b8a3e; }
+.status-rejected { background: #fff0f0; color: #c92a2a; }
